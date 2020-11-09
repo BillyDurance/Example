@@ -1,0 +1,3 @@
+﻿DELETE FROM Items;
+DELETE FROM Grocery_List;
+DELETE FROM End_User;

@@ -1,0 +1,20 @@
+<h1>Title</h1>
+
+<button class="btn btn-primary" style="float:left" (click)="incrementCounter()">Add to list</button>
+<button class="btn btn-primary" style="float:right" (click)="incrementCounter()">Remove from list </button>
+
+<br>
+<br>
+<table st-table="rowCollection" id="Table1" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Item Name</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let row of result">
+    <td> {{ row.title }} </td>
+    <td> {{ row.location }} </td>
+  <tr>
+
+</table>

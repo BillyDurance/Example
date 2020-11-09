@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Group4_Online_Grocery_List_Application.Models.GroceryItem>
+@using Group4_Online_Grocery_List_Application.Accessors
+
+
+@{
+    ViewData["Title"] = "List Page";
+
+    string userName = @ViewData["email"].ToString();
+    string title = @ViewData["listTitle"].ToString();
+}
+
+@functions{
+    List<GroceryItem> GetUsersItems(string email, string title)
+    {
+       
+        return ItemAccessor.GetAllGroceryItems(email, title);
+    }
+}
+
+
+<h1>@ViewData["Title"]</h1>
+
+<button class="btn btn-primary" style="float:left" (click)="incrementCounter()">Add to list</button>
+<button class="btn btn-primary" style="float:right" (click)="incrementCounter()">Remove from list </button>
+<br/>
+<br/>
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.itemName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.quanity)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (GroceryItem item in GetUsersItems(userName, title))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.itemName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quanity)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

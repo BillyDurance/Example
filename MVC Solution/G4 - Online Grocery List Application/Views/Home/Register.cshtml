@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+@functions{
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p><b>Please enter in your desired login credentials: </b></p>
+
+<br>
+  Please Enter Your Email:
+<input type="text" id="userInput" ng-model="Email">
+<br>
+  Please Enter your Password:
+<input type="text" id="userInput" ng-model="Password">
+<br>
+ Please Reenter Your Password:
+<input type="text" id="userInput" ng-model="RePassword">
+<br>
+<button id="register" type="button" class="btn btn-success btn-lg" onclick="">Register</button>

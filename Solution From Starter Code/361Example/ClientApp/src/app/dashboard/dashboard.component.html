@@ -1,0 +1,65 @@
+<head runat="server">
+  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+</head>
+
+<h1>Hello {{ userName | async }}</h1>
+
+<body>
+  
+  <script src="../csToTs.js"></script>
+
+  <p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+
+  <button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+  <br>
+  <br>
+  <br>
+  Name:
+  <input type="text" id="userInput" ng-model="firstName">
+  <br>
+  <button class="btn btn-primary" (click)="temp()">Name</button>
+
+  <p aria-live="polite">Name: <strong>{{ name }}</strong></p>
+
+
+
+  <p aria-live="polite">List: <strong>{{ list }}</strong></p>
+
+
+
+  <button class="btn btn-primary" (click)="addToTable()">test</button>
+
+  <br>
+  <br>
+  <button class="btn btn-primary" (click)="die()">cum</button>
+
+
+
+  <button class="btn btn-primary" style="float:right" (click)="incrementCounter()">Create New List</button>
+  <div style="text-align:center">
+    <h1>Your Lists</h1>
+  </div>
+  <table st-table="rowCollection" id="Table1" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tilte</th>
+        <th>Location</th>
+        <th>Created Date</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let row of result">
+      <td> {{ row.title }} </td>
+      <td> {{ row.location }} </td>
+      <td> {{ row.date }} </td>
+    <tr>
+
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+</body>
+
+
